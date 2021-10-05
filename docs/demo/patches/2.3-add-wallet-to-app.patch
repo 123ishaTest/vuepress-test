@@ -1,0 +1,33 @@
+From 310b1e2f923acee72bb54e1ebb6e02f60064e2fb Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Wed, 6 Oct 2021 01:03:46 +0200
+Subject: [PATCH] Add IgtWallet to App
+
+---
+ src/App.ts | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/src/App.ts b/src/App.ts
+index 21ab184..2db825b 100644
+--- a/src/App.ts
++++ b/src/App.ts
+@@ -1,5 +1,6 @@
+ import {MyGame} from "./my-game/MyGame";
+-import {IgtSettings} from "incremental-game-template";
++import {IgtSettings, IgtWallet} from "incremental-game-template";
++import {CurrencyType} from "@/my-game/features/wallet/CurrencyType";
+
+ export class App {
+     static inProduction: boolean = (process.env.NODE_ENV === "production");
+@@ -17,7 +18,7 @@ export class App {
+         return new MyGame(
+             {
+                 settings: new IgtSettings(),
+-                // Add your own features here.
++                wallet: new IgtWallet([CurrencyType.banana]),
+             }
+         );
+     }
+--
+2.25.1
+

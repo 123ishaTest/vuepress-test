@@ -28,6 +28,7 @@ export default defineUserConfig<DefaultThemeOptions>({
                         '/demo/setting-up.md',
                         '/demo/project-structure.md',
                         '/demo/first-changes.md',
+                        '/demo/adding-the-wallet.md',
                     ],
                 },
             ],

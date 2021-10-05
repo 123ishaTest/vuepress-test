@@ -1,0 +1,22 @@
+From ecccf7237c78890c388d119610327725a43e26b9 Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Wed, 6 Oct 2021 00:27:33 +0200
+Subject: [PATCH] Add CurrencyType.ts
+
+---
+ src/my-game/features/wallet/CurrencyType.ts | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 src/my-game/features/wallet/CurrencyType.ts
+
+diff --git a/src/my-game/features/wallet/CurrencyType.ts b/src/my-game/features/wallet/CurrencyType.ts
+new file mode 100644
+index 0000000..3b85d6d
+--- /dev/null
++++ b/src/my-game/features/wallet/CurrencyType.ts
+@@ -0,0 +1,3 @@
++export enum CurrencyType {
++    banana = "Banana",
++}
+--
+2.25.1
+

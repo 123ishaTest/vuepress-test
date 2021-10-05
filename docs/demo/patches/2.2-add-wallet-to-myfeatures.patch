@@ -1,0 +1,24 @@
+From 8b0a903a9da1f6bd554147c7bd8d09b79f023eed Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Wed, 6 Oct 2021 00:37:59 +0200
+Subject: [PATCH] Add IgtWallet to MyFeatures
+
+---
+ src/my-game/MyFeatures.ts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/my-game/MyFeatures.ts b/src/my-game/MyFeatures.ts
+index bbad3a0..edb3b93 100644
+--- a/src/my-game/MyFeatures.ts
++++ b/src/my-game/MyFeatures.ts
+@@ -1,5 +1,5 @@
+-import {IgtFeatures} from "incremental-game-template";
++import {IgtFeatures, IgtWallet} from "incremental-game-template";
+
+ export interface MyFeatures extends IgtFeatures {
+-
++    wallet: IgtWallet;
+ }
+--
+2.25.1
+

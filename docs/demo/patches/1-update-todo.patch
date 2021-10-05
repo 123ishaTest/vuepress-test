@@ -1,0 +1,29 @@
+From bb2bc63f5f76fb898e7c2edf257b3856dacb17e2 Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Tue, 5 Oct 2021 23:58:49 +0200
+Subject: [PATCH] Update SAVE_KEY and TICK_DURATION
+
+---
+ src/my-game/MyGame.ts | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/src/my-game/MyGame.ts b/src/my-game/MyGame.ts
+index ccf0d89..03ee720 100644
+--- a/src/my-game/MyGame.ts
++++ b/src/my-game/MyGame.ts
+@@ -2,10 +2,8 @@ import {IgtGame} from "incremental-game-template";
+ import {MyFeatures} from "@/my-game/MyFeatures";
+
+ export class MyGame extends IgtGame {
+-    // @TODO Update SAVE_KEY to something unique
+-    protected readonly SAVE_KEY: string = 'igt-vue';
+-    // @TODO Update TICK_DURATION to an appropriate value
+-    protected readonly TICK_DURATION: number = 0.01;
++    protected readonly SAVE_KEY: string = '123ishaTest/igt-demo';
++    protected readonly TICK_DURATION: number = 0.1;
+     features: MyFeatures;
+
+     constructor(features: MyFeatures) {
+--
+2.25.1
+
