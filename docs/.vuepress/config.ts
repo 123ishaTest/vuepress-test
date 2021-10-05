@@ -3,19 +3,19 @@ import type {DefaultThemeOptions} from 'vuepress'
 
 export default defineUserConfig<DefaultThemeOptions>({
     lang: 'en-US',
-    title: 'Hello VuePress',
-    description: 'Just playing around',
+    title: 'Incremental Game Template',
+    description: 'A collection of useful scripts to help you develop incremental games',
 
     themeConfig: {
         logo: 'https://vuejs.org/images/logo.png',
         navbar: [
             {
                 text: 'Docs',
-                link: '/docs/',
+                link: '/docs/introduction/introduction/',
             },
             {
                 text: 'Demo',
-                link: '/demo/',
+                link: '/demo/introduction',
             },
         ],
         sidebarDepth: 0,
