@@ -5,7 +5,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     lang: 'en-US',
     title: 'Incremental Game Template',
     description: 'A collection of useful scripts to help you develop incremental games',
-
+    base: "/vuepress-test/",
     themeConfig: {
         logo: 'https://vuejs.org/images/logo.png',
         navbar: [

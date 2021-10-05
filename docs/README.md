@@ -7,7 +7,7 @@ actions:
   link: /docs/introduction/introduction
   type: secondary
 - text: Tutorial
-  link: /demo//introduction
+  link: /demo/introduction
   type: secondary
 - text: Demo
   link: https://123ishatest.github.io/igt-demo/
