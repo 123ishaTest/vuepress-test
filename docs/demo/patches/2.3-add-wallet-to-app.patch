@@ -1,7 +1,7 @@
 From 310b1e2f923acee72bb54e1ebb6e02f60064e2fb Mon Sep 17 00:00:00 2001
 From: Isha <ishadijcks@gmail.com>
 Date: Wed, 6 Oct 2021 01:03:46 +0200
-Subject: [PATCH] Add IgtWallet to App
+Subject: [PATCH] 2.3: Add IgtWallet to App
 
 ---
  src/App.ts | 5 +++--

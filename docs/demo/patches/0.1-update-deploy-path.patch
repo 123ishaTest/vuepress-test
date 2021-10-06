@@ -1,0 +1,25 @@
+From d517a485497fb7ef818714c073fee8d8222f0d5e Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Wed, 6 Oct 2021 17:45:58 +0200
+Subject: [PATCH] 0.1 Update deploy path
+
+---
+ vue.config.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/vue.config.js b/vue.config.js
+index f3ca42f..998aea5 100644
+--- a/vue.config.js
++++ b/vue.config.js
+@@ -1,5 +1,5 @@
+ module.exports = {
+     publicPath: process.env.NODE_ENV === 'production'
+-        ? '/incremental-game-template/'
++        ? '/igt-demo/'
+         : '/'
+-}
+\ No newline at end of file
++}
+--
+2.25.1
+

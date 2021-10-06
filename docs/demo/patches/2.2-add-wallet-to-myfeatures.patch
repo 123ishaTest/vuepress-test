@@ -1,7 +1,7 @@
 From 8b0a903a9da1f6bd554147c7bd8d09b79f023eed Mon Sep 17 00:00:00 2001
 From: Isha <ishadijcks@gmail.com>
 Date: Wed, 6 Oct 2021 00:37:59 +0200
-Subject: [PATCH] Add IgtWallet to MyFeatures
+Subject: [PATCH] 2.2: Add IgtWallet to MyFeatures
 
 ---
  src/my-game/MyFeatures.ts | 4 ++--

@@ -1,7 +1,7 @@
 From bb2bc63f5f76fb898e7c2edf257b3856dacb17e2 Mon Sep 17 00:00:00 2001
 From: Isha <ishadijcks@gmail.com>
 Date: Tue, 5 Oct 2021 23:58:49 +0200
-Subject: [PATCH] Update SAVE_KEY and TICK_DURATION
+Subject: [PATCH] 1.1: Update SAVE_KEY and TICK_DURATION
 
 ---
  src/my-game/MyGame.ts | 6 ++----
