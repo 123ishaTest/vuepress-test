@@ -14,7 +14,7 @@ export default defineUserConfig<DefaultThemeOptions>({
                 link: '/docs/introduction/introduction/',
             },
             {
-                text: 'Demo',
+                text: 'Tutorial',
                 link: '/demo/introduction',
             },
         ],
@@ -22,13 +22,14 @@ export default defineUserConfig<DefaultThemeOptions>({
         sidebar: {
             '/demo': [
                 {
-                    text: 'Introduction',
+                    text: 'Let\'s go bananas',
                     children: [
                         '/demo/introduction.md',
                         '/demo/setting-up.md',
                         '/demo/project-structure.md',
                         '/demo/first-changes.md',
                         '/demo/adding-the-wallet.md',
+                        '/demo/gaining-bananas.md',
                     ],
                 },
             ],

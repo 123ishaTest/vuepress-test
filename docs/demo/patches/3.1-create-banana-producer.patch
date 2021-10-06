@@ -1,0 +1,88 @@
+From 756c30e21a24b1fa3db5d41f7f11275a2737cb3d Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Wed, 6 Oct 2021 19:36:35 +0200
+Subject: [PATCH] 3.1 Create BananaProducer
+
+---
+ src/App.ts                                    |  2 ++
+ src/my-game/MyFeatures.ts                     |  2 ++
+ .../banana-producer/BananaProducer.ts         | 35 +++++++++++++++++++
+ 3 files changed, 39 insertions(+)
+ create mode 100644 src/my-game/features/banana-producer/BananaProducer.ts
+
+diff --git a/src/App.ts b/src/App.ts
+index 2db825b..c40e077 100644
+--- a/src/App.ts
++++ b/src/App.ts
+@@ -1,6 +1,7 @@
+ import {MyGame} from "./my-game/MyGame";
+ import {IgtSettings, IgtWallet} from "incremental-game-template";
+ import {CurrencyType} from "@/my-game/features/wallet/CurrencyType";
++import {BananaProducer} from "@/my-game/features/banana-producer/BananaProducer";
+
+ export class App {
+     static inProduction: boolean = (process.env.NODE_ENV === "production");
+@@ -19,6 +20,7 @@ export class App {
+             {
+                 settings: new IgtSettings(),
+                 wallet: new IgtWallet([CurrencyType.banana]),
++                banana: new BananaProducer(),
+             }
+         );
+     }
+diff --git a/src/my-game/MyFeatures.ts b/src/my-game/MyFeatures.ts
+index edb3b93..c8e5ff9 100644
+--- a/src/my-game/MyFeatures.ts
++++ b/src/my-game/MyFeatures.ts
+@@ -1,5 +1,7 @@
+ import {IgtFeatures, IgtWallet} from "incremental-game-template";
++import {BananaProducer} from "@/my-game/features/banana-producer/BananaProducer";
+
+ export interface MyFeatures extends IgtFeatures {
+     wallet: IgtWallet;
++    banana: BananaProducer;
+ }
+diff --git a/src/my-game/features/banana-producer/BananaProducer.ts b/src/my-game/features/banana-producer/BananaProducer.ts
+new file mode 100644
+index 0000000..15d7b7e
+--- /dev/null
++++ b/src/my-game/features/banana-producer/BananaProducer.ts
+@@ -0,0 +1,35 @@
++import {Currency, IgtFeature, IgtWallet, SaveData} from "incremental-game-template";
++import {CurrencyType} from "@/my-game/features/wallet/CurrencyType";
++import {MyFeatures} from "@/my-game/MyFeatures";
++
++export class BananaProducer extends IgtFeature {
++
++    // Declare the attribute. It is undefined for now but we can promise TypeScript it will be initialized in the initialize()
++    private _wallet: IgtWallet = undefined as unknown as IgtWallet;
++
++    constructor() {
++        // The saveKey for this feature
++        super('banana');
++    }
++
++    // Inject the wallet so we can refer to it later
++    initialize(features: MyFeatures) {
++        this._wallet = features.wallet;
++    }
++
++    // This method is called every tick, delta is the time elapsed since last tick
++    update(delta: number) {
++        const bananasToGain = 1;
++        const currency = new Currency(bananasToGain * delta, CurrencyType.banana);
++        this._wallet.gainCurrency(currency)
++    }
++
++    load(data: SaveData): void {
++        // Empty
++    }
++
++    save(): SaveData {
++        return {};
++    }
++
++}
+--
+2.25.1
+

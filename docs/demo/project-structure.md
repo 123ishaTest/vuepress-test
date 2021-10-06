@@ -2,7 +2,7 @@
 id: project-structure
 title: Project Structure
 ---
-
+# Project Structure
 Let's take a look at the files we have in our repository.
 It is important to note that we have used a Vue template, so most files are just standard Vue files.
 

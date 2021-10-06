@@ -32,3 +32,15 @@ This makes it much easier to add custom functionality later.
 :::
 
 ## Creating a UI
+The `igt-vue` repository comes with a bunch of useful Vue components that work with `IgtFeature`s.
+We will use the `src/components/features/igt-wallet.vue` component to render the amount of bananas we have.
+We need to add a computed which grabs the amount from the wallet, and render that.
+@[code{12-39} diff](patches/2.4-update-wallet-component.patch)
+
+And finally we need to include it in the `App.vue` to make sure it is actually used.
+Our game will be fairly simple, so let's create a "Main Screen" that contains the `<igt-wallet>` for now.
+@[code{12-38} diff](patches/2.5-add-component-to-app.patch)
+
+If we now open our game in the browser we should see a message that says "I have 0 bananas".
+
+Great we can track currencies, now let's earn some bananas!

@@ -2,12 +2,14 @@
 id: setting-up
 title: Setting Up
 ---
+# Setting Up
+In this section we will get our local environment up and running.
 
 First we need to use the template by pressing the big green button
-![](./images/use-this-template.png)
+![](images/use-this-template.png)
 
 Select the organization to create the repository in, and give it a proper name
-![](./images/template-setting.png)
+![](images/template-setting.png)
 
 This should redirect you to a URL like https://github.com/123ishaTest/igt-demo
 

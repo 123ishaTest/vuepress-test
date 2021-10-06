@@ -1,9 +1,8 @@
 ---
 id: introduction
 title: Introduction
-slug: /
 ---
-
+# Introduction
 Hi there!
 
 So you want to build a game with the Incremental Game Template? Well you're at the right address!

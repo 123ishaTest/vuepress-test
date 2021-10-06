@@ -1,0 +1,43 @@
+From 4cdaa2e0013e47c1ebf227fea630914e33b99c43 Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Wed, 6 Oct 2021 18:20:18 +0200
+Subject: [PATCH] 2.4 Update wallet component
+
+---
+ src/components/features/wallet/igt-wallet.vue | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/src/components/features/wallet/igt-wallet.vue b/src/components/features/wallet/igt-wallet.vue
+index 1fe72f4..bae2613 100644
+--- a/src/components/features/wallet/igt-wallet.vue
++++ b/src/components/features/wallet/igt-wallet.vue
+@@ -1,12 +1,13 @@
+ <template>
+   <igt-feature>
+-    Wallet
++    <p>I have {{ banana }} bananas</p>
+   </igt-feature>
+ </template>
+
+ <script>
+ import IgtFeature from "@/components/util/igt-feature";
+ import {IgtWallet} from "incremental-game-template";
++import {CurrencyType} from "@/my-game/features/wallet/CurrencyType";
+
+ export default {
+   name: "igt-wallet",
+@@ -17,6 +18,11 @@ export default {
+       required: true
+     },
+   },
++  computed: {
++    banana() {
++      return this.walletFeature.getAmount(CurrencyType.banana);
++    }
++  },
+ }
+ </script>
+
+--
+2.25.1
+
