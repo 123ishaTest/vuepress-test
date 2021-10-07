@@ -15,7 +15,7 @@ index 1fe72f4..bae2613 100644
  <template>
    <igt-feature>
 -    Wallet
-    <p>I have {{ banana | numberFormat }} bananas</p>
++    <p>I have {{ banana | numberFormat }} bananas</p>
    </igt-feature>
  </template>
 
