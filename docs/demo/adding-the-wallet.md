@@ -7,7 +7,7 @@ Our game of course revolves around bananas, so that's what we're going to use.
 
 ## Create a new CurrencyType
 First we need to add a new file `src/my-game/features/wallet/CurrencyType.ts`.
-This allows us to refer to our currency easily
+This allows us to refer to our currency easily.
 
 @[code{17-19} diff](patches/2.1-create-currencies.patch)
 
@@ -35,6 +35,7 @@ This makes it much easier to add custom functionality later.
 The `igt-vue` repository comes with a bunch of useful Vue components that work with `IgtFeature`s.
 We will use the `src/components/features/igt-wallet.vue` component to render the amount of bananas we have.
 We need to add a computed which grabs the amount from the wallet, and render that.
+The `numberFormat` is a Vue filter that properly formats the number to contain 2 decimal places.
 @[code{12-39} diff](patches/2.4-update-wallet-component.patch)
 
 And finally we need to include it in the `App.vue` to make sure it is actually used.

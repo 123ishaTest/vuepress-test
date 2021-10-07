@@ -1,0 +1,57 @@
+From 5c493f059b3dad6efdbef89fa9f1229490e8fc6e Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Thu, 7 Oct 2021 11:34:36 +0200
+Subject: [PATCH] 3.4: Save BananaProducer
+
+---
+ .../features/banana-producer/BananaProducer.ts      | 13 ++++++++-----
+ .../banana-producer/BananaProducerSaveData.ts       |  5 +++++
+ 2 files changed, 13 insertions(+), 5 deletions(-)
+ create mode 100644 src/my-game/features/banana-producer/BananaProducerSaveData.ts
+
+diff --git a/src/my-game/features/banana-producer/BananaProducer.ts b/src/my-game/features/banana-producer/BananaProducer.ts
+index f56b897..96d95d1 100644
+--- a/src/my-game/features/banana-producer/BananaProducer.ts
++++ b/src/my-game/features/banana-producer/BananaProducer.ts
+@@ -1,6 +1,7 @@
+-import {AddWallet, ContinuousUpgrade, Currency, IgtFeature, SaveData} from "incremental-game-template";
++import {AddWallet, ContinuousUpgrade, Currency, IgtFeature} from "incremental-game-template";
+ import {CurrencyType} from "@/my-game/features/wallet/CurrencyType";
+ import {MyFeatures} from "@/my-game/MyFeatures";
++import {BananaProducerSaveData} from "@/my-game/features/banana-producer/BananaProducerSaveData";
+
+ export class BananaProducer extends AddWallet(IgtFeature) {
+
+@@ -31,12 +32,14 @@ export class BananaProducer extends AddWallet(IgtFeature) {
+         this._wallet.gainCurrency(currency)
+     }
+
+-    load(data: SaveData): void {
+-        // Empty
++    load(data: BananaProducerSaveData): void {
++        this.monkeyUpgrade.level = data.monkeyLevel ?? 0;
+     }
+
+-    save(): SaveData {
+-        return {};
++    save(): BananaProducerSaveData {
++        return {
++            monkeyLevel: this.monkeyUpgrade.level,
++        };
+     }
+
+ }
+diff --git a/src/my-game/features/banana-producer/BananaProducerSaveData.ts b/src/my-game/features/banana-producer/BananaProducerSaveData.ts
+new file mode 100644
+index 0000000..5653a57
+--- /dev/null
++++ b/src/my-game/features/banana-producer/BananaProducerSaveData.ts
+@@ -0,0 +1,5 @@
++import {SaveData} from "incremental-game-template";
++
++export interface BananaProducerSaveData extends SaveData {
++    monkeyLevel: number;
++}
+--
+2.25.1
+

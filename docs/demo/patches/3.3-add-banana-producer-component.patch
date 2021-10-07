@@ -1,0 +1,79 @@
+From f1b5d30053b54cd34a895f767dab53f028908105 Mon Sep 17 00:00:00 2001
+From: Isha <ishadijcks@gmail.com>
+Date: Thu, 7 Oct 2021 10:56:15 +0200
+Subject: [PATCH] 3.3 Add banana-producer component
+
+---
+ src/VueApp.vue                                |  3 ++
+ .../banana-producer/banana-producer.vue       | 35 +++++++++++++++++++
+ 2 files changed, 38 insertions(+)
+ create mode 100644 src/components/features/banana-producer/banana-producer.vue
+
+diff --git a/src/VueApp.vue b/src/VueApp.vue
+index 56941bf..2a99dfa 100644
+--- a/src/VueApp.vue
++++ b/src/VueApp.vue
+@@ -7,6 +7,7 @@
+
+       <igt-tab name="Main screen" :selected="true">
+         <igt-wallet :wallet-feature="game.features.wallet"></igt-wallet>
++        <banana-producer :banana-producer-feature="game.features.bananaProducer"></banana-producer>
+       </igt-tab>
+
+       <igt-tab name="Settings">
+@@ -43,9 +44,11 @@ import IgtSidebarCategory from "@/components/util/sidebar/igt-sidebar-category";
+ import IgtSidebarExternalLink from "@/components/util/sidebar/igt-sidebar-external-link";
+ import IgtSettings from "@/components/features/settings/igt-settings";
+ import IgtWallet from "@/components/features/wallet/igt-wallet";
++import BananaProducer from "@/components/features/banana-producer/banana-producer";
+
+ export default {
+   components: {
++    BananaProducer,
+     IgtWallet,
+     IgtSettings,
+     IgtSidebarExternalLink,
+diff --git a/src/components/features/banana-producer/banana-producer.vue b/src/components/features/banana-producer/banana-producer.vue
+new file mode 100644
+index 0000000..80f6408
+--- /dev/null
++++ b/src/components/features/banana-producer/banana-producer.vue
+@@ -0,0 +1,35 @@
++<template>
++  <igt-feature>
++    <igt-upgrade
++        @click.native="bananaProducerFeature.buyUpgrade(monkeyUpgrade)"
++        :upgrade="monkeyUpgrade"
++        :can-buy="bananaProducerFeature.canAfford(monkeyUpgrade)">
++    </igt-upgrade>
++  </igt-feature>
++</template>
++
++<script>
++import IgtFeature from "@/components/util/igt-feature";
++import {BananaProducer} from "@/my-game/features/banana-producer/BananaProducer";
++import IgtUpgrade from "@/components/tools/upgrades/igt-discrete-upgrade";
++
++export default {
++  name: "banana-producer",
++  components: {IgtUpgrade, IgtFeature},
++  props: {
++    bananaProducerFeature: {
++      type: BananaProducer,
++      required: true
++    },
++  },
++  computed: {
++    monkeyUpgrade() {
++      return this.bananaProducerFeature.monkeyUpgrade;
++    }
++  },
++}
++</script>
++
++<style scoped>
++
++</style>
+--
+2.25.1
+

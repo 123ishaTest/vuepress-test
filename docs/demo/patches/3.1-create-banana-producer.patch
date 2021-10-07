@@ -26,7 +26,7 @@ index 2db825b..c40e077 100644
              {
                  settings: new IgtSettings(),
                  wallet: new IgtWallet([CurrencyType.banana]),
-+                banana: new BananaProducer(),
++                bananaProducer: new BananaProducer(),
              }
          );
      }
@@ -40,7 +40,7 @@ index edb3b93..c8e5ff9 100644
 
  export interface MyFeatures extends IgtFeatures {
      wallet: IgtWallet;
-+    banana: BananaProducer;
++    bananaProducer: BananaProducer;
  }
 diff --git a/src/my-game/features/banana-producer/BananaProducer.ts b/src/my-game/features/banana-producer/BananaProducer.ts
 new file mode 100644

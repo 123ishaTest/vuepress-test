@@ -4,13 +4,13 @@ Date: Wed, 6 Oct 2021 18:26:09 +0200
 Subject: [PATCH] 2.5 Add component to App
 
 ---
- src/App.vue | 8 +++++++-
+ src/VueApp.vue | 8 +++++++-
  1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git a/src/App.vue b/src/App.vue
+diff --git a/src/VueApp.vue b/src/VueApp.vue
 index 45ae958..c02dc72 100644
---- a/src/App.vue
-+++ b/src/App.vue
+--- a/src/VueApp.vue
++++ b/src/VueApp.vue
 @@ -5,7 +5,11 @@
 
        <igt-sidebar-category name="Features"></igt-sidebar-category>
